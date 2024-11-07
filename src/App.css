@@ -1,0 +1,266 @@
+/* Global styles for the app */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #00bcd4, #4caf50); /* Beautiful gradient background */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  color: transparent; /* Make the title match the background */
+  background: linear-gradient(135deg, #00bcd4, #4caf50); /* Apply the gradient to the text */
+  -webkit-background-clip: text; /* Clip the gradient to the text */
+  background-clip: text; /* Ensures the gradient applies to text on modern browsers */
+  font-size: 2.5rem;
+  margin-top: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow to make text pop */
+}
+
+/* App container */
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff; /* Clean white background for content */
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for a floating effect */
+  width: 100%;
+  max-width: 900px;
+  margin: 30px auto;
+  animation: fadeIn 1s ease; /* Fade-in effect for smooth appearance */
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Search bar */
+.search-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.search-bar label {
+  font-size: 1.5rem;
+  color: transparent; /* Make the label match the background */
+  background: linear-gradient(135deg, #00bcd4, #4caf50); /* Apply the gradient to the text */
+  -webkit-background-clip: text; /* Clip the gradient to the text */
+  background-clip: text; /* Ensures the gradient applies to text on modern browsers */
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.search-bar input {
+  padding: 12px;
+  border: 2px solid #00bcd4; /* Change border to match the gradient */
+  border-radius: 8px;
+  width: 280px;
+  margin-right: 10px;
+  font-size: 1.1rem;
+  color: #333; /* Dark text for readability */
+  transition: all 0.3s ease;
+}
+
+.search-bar input:focus {
+  border-color: #4caf50; /* Focus on the secondary gradient color */
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 188, 212, 0.7); /* Focus effect with smooth transition */
+}
+
+/* Enhanced Search button with gradient and effects */
+.search-bar button {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #00bcd4, #4caf50); /* Gradient for the button */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for hover and active states */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a floating effect */
+}
+
+/* Hover effect */
+.search-bar button:hover {
+  background: linear-gradient(135deg, #4caf50, #00bcd4); /* Reverse gradient on hover */
+  transform: scale(1.05); /* Slight button enlargement on hover */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+}
+
+/* Active (click) effect */
+.search-bar button:active {
+  background: linear-gradient(135deg, #2c6e31, #388e3c); /* Darker gradient on click */
+  transform: scale(1); /* Reset scaling on click */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Reset shadow on click */
+}
+
+/* Focus effect (when the button is clicked or in focus) */
+.search-bar button:focus {
+  outline: none;
+  box-shadow: 0px 0px 10px rgba(0, 188, 212, 0.7); /* Blue glow on focus */
+}
+
+/* Book list */
+.book-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Book card */
+.book-card {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-10px); /* Elevate the card on hover */
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1); /* Bigger shadow on hover */
+}
+
+.book-card img {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.book-card h3 {
+  font-size: 1.2rem;
+  color: #4caf50; /* Title color to match the gradient */
+  margin-bottom: 5px;
+}
+
+.book-card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.pagination button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #388e3c;
+  transform: scale(1.05);
+}
+
+.pagination button:active {
+  background-color: #2c6e31;
+  transform: scale(1);
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Responsive Design for Small Screens */
+
+/* For mobile devices (less than 600px) */
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .app {
+    padding: 15px;
+    margin: 15px;
+  }
+
+  .search-bar input {
+    width: 220px;
+    font-size: 1rem;
+  }
+
+  .search-bar button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .book-list {
+    grid-template-columns: 1fr; /* Single column for mobile screens */
+  }
+
+  .book-card {
+    padding: 12px;
+  }
+
+  .pagination button {
+    font-size: 0.9rem;
+  }
+}
+
+/* For tablets (600px to 900px) */
+@media screen and (max-width: 900px) and (min-width: 601px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .app {
+    padding: 20px;
+  }
+
+  .search-bar input {
+    width: 250px;
+    font-size: 1.1rem;
+  }
+
+  .search-bar button {
+    padding: 12px 22px;
+    font-size: 1.1rem;
+  }
+
+  .book-list {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust columns for tablet screens */
+  }
+}
+
+/* For large screens */
+@media screen and (min-width: 1200px) {
+  .search-bar input {
+    width: 350px;
+  }
+
+  .search-bar button {
+    padding: 14px 28px;
+  }
+}
